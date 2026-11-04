@@ -1,0 +1,170 @@
+{
+  "01-search-notion": {
+    "query": "Notion",
+    "selectedIndex": 0,
+    "recent": [
+      "Figma",
+      "Spotify",
+      "Linear"
+    ],
+    "apps": [
+      {
+        "trackId": 1232780281,
+        "trackName": "Notion: Notes, Tasks, AI",
+        "artistName": "Notion Labs, Incorporated",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/01.jpg"
+      },
+      {
+        "trackId": 1607562761,
+        "trackName": "Notion Calendar",
+        "artistName": "Notion Labs, Incorporated",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/02.jpg"
+      },
+      {
+        "trackId": 6473753684,
+        "trackName": "Claude by Anthropic",
+        "artistName": "Anthropic PBC",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/03.jpg"
+      },
+      {
+        "trackId": 1594021892,
+        "trackName": "To-Do List & Tasks for Notion",
+        "artistName": "ZipoApps",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/04.jpg"
+      },
+      {
+        "trackId": 6751851452,
+        "trackName": "Widget for Notion",
+        "artistName": "YUYA YOSHIDA",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/05.jpg"
+      },
+      {
+        "trackId": 6759811964,
+        "trackName": "Notion Agents",
+        "artistName": "Notion Labs, Incorporated",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/06.jpg"
+      }
+    ],
+    "canvasTitle": "Search the App Store inside Sketch",
+    "canvasBody": "Type an app name, choose a store region, and browse official icons without leaving your document.",
+    "scene": "search"
+  },
+  "02-selected-figma": {
+    "query": "Figma",
+    "selectedIndex": 0,
+    "recent": [
+      "Notion",
+      "Spotify",
+      "Slack"
+    ],
+    "apps": [
+      {
+        "trackId": 1152747299,
+        "trackName": "Figma",
+        "artistName": "Figma Inc.",
+        "primaryGenreName": "Graphics & Design",
+        "artworkUrl": "./art/07.jpg"
+      },
+      {
+        "trackId": 897446215,
+        "trackName": "Canva AI Photo & Video Editor",
+        "artistName": "Canva",
+        "primaryGenreName": "Photo & Video",
+        "artworkUrl": "./art/08.jpg"
+      },
+      {
+        "trackId": 6448311069,
+        "trackName": "ChatGPT",
+        "artistName": "OpenAI OpCo, LLC",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/09.jpg"
+      },
+      {
+        "trackId": 1051937863,
+        "trackName": "Adobe Express: Create Anything",
+        "artistName": "Adobe Inc.",
+        "primaryGenreName": "Graphics & Design",
+        "artworkUrl": "./art/10.jpg"
+      },
+      {
+        "trackId": 429047995,
+        "trackName": "Pinterest",
+        "artistName": "Pinterest, Inc.",
+        "primaryGenreName": "Lifestyle",
+        "artworkUrl": "./art/11.jpg"
+      },
+      {
+        "trackId": 956480678,
+        "trackName": "Coolors",
+        "artistName": "Coolors srl",
+        "primaryGenreName": "Graphics & Design",
+        "artworkUrl": "./art/12.jpg"
+      }
+    ],
+    "canvasTitle": "Pick the icon you need",
+    "canvasBody": "Select a result to preview the official artwork, publisher, and category, then insert it onto the canvas.",
+    "scene": "selected"
+  },
+  "03-insert-saved": {
+    "query": "Notion",
+    "selectedIndex": 0,
+    "recent": [
+      "Figma",
+      "Spotify",
+      "Linear"
+    ],
+    "apps": [
+      {
+        "trackId": 1232780281,
+        "trackName": "Notion: Notes, Tasks, AI",
+        "artistName": "Notion Labs, Incorporated",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/01.jpg"
+      },
+      {
+        "trackId": 1607562761,
+        "trackName": "Notion Calendar",
+        "artistName": "Notion Labs, Incorporated",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/02.jpg"
+      },
+      {
+        "trackId": 6473753684,
+        "trackName": "Claude by Anthropic",
+        "artistName": "Anthropic PBC",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/03.jpg"
+      },
+      {
+        "trackId": 1594021892,
+        "trackName": "To-Do List & Tasks for Notion",
+        "artistName": "ZipoApps",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/04.jpg"
+      },
+      {
+        "trackId": 6751851452,
+        "trackName": "Widget for Notion",
+        "artistName": "YUYA YOSHIDA",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/05.jpg"
+      },
+      {
+        "trackId": 6759811964,
+        "trackName": "Notion Agents",
+        "artistName": "Notion Labs, Incorporated",
+        "primaryGenreName": "Productivity",
+        "artworkUrl": "./art/06.jpg"
+      }
+    ],
+    "canvasTitle": "Insert a PNG onto the canvas",
+    "canvasBody": "Places a 128×128 official App Store icon on the selected frame or group, or on the current page.",
+    "scene": "saved"
+  }
+}

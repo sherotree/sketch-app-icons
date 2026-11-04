@@ -1,0 +1,9 @@
+{
+  "name": "sketch-app-icons-screenshot-src",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "playwright": "^1.49.1"
+  }
+}

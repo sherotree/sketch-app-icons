@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./webview.css">
+  <title>App Icons</title>
+</head>
+<body>
+  <div class="app">
+    <form id="search-form" class="filters" role="search">
+      <div class="field">
+        <label id="search-label" class="label" for="query"></label>
+        <div class="control">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="7" cy="7" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+            <path d="M10.2 10.2 L13.2 13.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+          <input id="query" type="search" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+          <button id="clear" class="clear" type="button" hidden>
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M3 3 L9 9 M9 3 L3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="field">
+        <label id="region-label" class="label" for="country"></label>
+        <div class="control">
+          <select id="country"></select>
+        </div>
+      </div>
+    </form>
+    <div id="progress" class="progress" data-active="false" aria-hidden="true"></div>
+    <div id="status" class="sr" role="status"></div>
+    <div id="stage" class="stage"></div>
+    <section id="dock" class="dock" hidden></section>
+    <footer class="footer">
+      <button id="privacy" class="text-button" type="button"></button>
+    </footer>
+    <dialog id="privacy-dialog" class="sheet">
+      <h2 id="privacy-title" class="sheet-title"></h2>
+      <p id="privacy-body" class="sheet-body"></p>
+      <p id="privacy-local" class="sheet-body"></p>
+      <p id="rights" class="sheet-body"></p>
+      <div class="sheet-links">
+        <button id="privacy-policy" class="link" type="button" data-url="https://www.uwarp.design/privacy-policy"></button>
+        <button id="web-tool" class="link" type="button" data-url="https://www.uwarp.design/logo-hunter"></button>
+      </div>
+      <button id="privacy-close" class="secondary" type="button"></button>
+    </dialog>
+  </div>
+  <script src="./webview.js"></script>
+</body>
+</html>

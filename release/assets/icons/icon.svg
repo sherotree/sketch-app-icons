@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D6A52"/>
+      <stop offset="1" stop-color="#084536"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFCF5"/>
+      <stop offset="1" stop-color="#F0E9DC"/>
+    </linearGradient>
+    <linearGradient id="creamFix" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFCF5"/>
+      <stop offset="1" stop-color="#F0E9DC"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#F3C65A"/>
+      <stop offset="1" stop-color="#D9A01F"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#021A14" flood-opacity="0.28"/>
+    </filter>
+    <filter id="goldGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#E8B02F" flood-opacity="0.45"/>
+    </filter>
+    <clipPath id="squircle">
+      <rect x="0" y="0" width="1024" height="1024" rx="224" ry="224"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer app-icon squircle -->
+  <rect width="1024" height="1024" rx="224" ry="224" fill="url(#bg)"/>
+
+  <!-- subtle top sheen -->
+  <g clip-path="url(#squircle)">
+    <ellipse cx="512" cy="-40" rx="620" ry="360" fill="#FFFFFF" fill-opacity="0.10"/>
+  </g>
+
+  <!-- tile grid: margin ~18%, gap ~6.5% -->
+  <!-- tile size: (1024 - 2*184 - 66) / 2 = 295 -->
+  <g filter="url(#softShadow)">
+    <!-- TL -->
+    <rect x="184" y="184" width="295" height="295" rx="78" ry="78" fill="url(#creamFix)"/>
+    <!-- TR -->
+    <rect x="545" y="184" width="295" height="295" rx="78" ry="78" fill="url(#creamFix)"/>
+    <!-- BL -->
+    <rect x="184" y="545" width="295" height="295" rx="78" ry="78" fill="url(#creamFix)"/>
+  </g>
+
+  <!-- BR selected / found -->
+  <g filter="url(#goldGlow)">
+    <rect x="545" y="545" width="295" height="295" rx="78" ry="78" fill="url(#gold)"/>
+  </g>
+  <!-- gold highlight -->
+  <rect x="575" y="575" width="235" height="90" rx="45" fill="#FFFFFF" fill-opacity="0.22"/>
+
+  <!-- tiny finder mark on gold: white circle + notch = magnifier hint, simplified -->
+  <circle cx="692" cy="692" r="52" stroke="#FFF8E8" stroke-width="28" fill="none"/>
+  <line x1="730" y1="730" x2="768" y2="768" stroke="#FFF8E8" stroke-width="28" stroke-linecap="round"/>
+</svg>

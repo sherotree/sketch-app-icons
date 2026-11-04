@@ -1,0 +1,8 @@
+node_modules
+app-icons.sketchplugin
+*.tsbuildinfo
+release/screenshot-src/node_modules
+release/screenshot-src/_tmp-*.html
+release/screenshot-src/art
+release/screenshot-src/icon-128.png
+.DS_Store

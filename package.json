@@ -1,0 +1,21 @@
+{
+  "name": "app-icons-sketch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Search the App Store and insert official app icons as PNG.",
+  "scripts": {
+    "build": "node scripts/render-icon.mjs && node esbuild.mjs",
+    "typecheck": "tsc --noEmit",
+    "icons": "node scripts/render-icon.mjs",
+    "release:zip": "node scripts/pack-release.mjs"
+  },
+  "dependencies": {
+    "events": "3.3.0",
+    "sketch-module-web-view": "3.5.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2",
+    "typescript": "5.6.3",
+    "sharp": "0.33.5"
+  }
+}

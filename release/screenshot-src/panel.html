@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App Icons Finder — Sketch screenshot</title>
+  <style>
+:root {
+  color-scheme: light;
+  --bg: #f4f4f5;
+  --surface: #ffffff;
+  --ink: #1c1c1e;
+  --muted: #6e6e73;
+  --line: #d8d8dc;
+  --hover: rgba(0, 0, 0, 0.05);
+  --selected: rgba(10, 83, 64, 0.08);
+  --accent: #0a5340;
+  --accent-ink: #ffffff;
+  --ok: #1f7a3a;
+  --thumb: #e5e5ea;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --gold: #c4a35a;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  background: #111;
+  color: var(--ink);
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: default; }
+
+.frame {
+  width: 1280px;
+  height: 800px;
+  display: grid;
+  grid-template-rows: 38px 1fr;
+  background: #1e1e1e;
+  overflow: hidden;
+}
+.menubar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 14px;
+  background: linear-gradient(180deg, #3a3a3c, #2c2c2e);
+  border-bottom: 1px solid #151515;
+  color: #f5f5f7;
+  font-size: 12px;
+}
+.traffic { display: flex; gap: 7px; }
+.traffic i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.traffic .r { background: #ff5f57; }
+.traffic .y { background: #febc2e; }
+.traffic .g { background: #28c840; }
+.menubar .app-name { font-weight: 600; }
+.menubar .menus { display: flex; gap: 12px; color: #d1d1d6; }
+.menubar .doc {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aeaeb2;
+}
+.menubar .doc img { width: 14px; height: 14px; border-radius: 3px; }
+
+.workspace {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  min-height: 0;
+  background: #2c2c2e;
+}
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  background: #1c1c1e;
+  border-right: 1px solid #0f0f10;
+  color: #aeaeb2;
+}
+.tool {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.tool.active { background: #0a5340; color: #fff; }
+.tool.ghost { background: #2c2c2e; }
+
+.stage-wrap {
+  position: relative;
+  min-height: 0;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(196, 163, 90, 0.14), transparent 38%),
+    radial-gradient(circle at 78% 72%, rgba(10, 83, 64, 0.12), transparent 40%),
+    linear-gradient(160deg, #ebe7df, #e2ddd4 55%, #ddd6cb);
+  overflow: hidden;
+}
+.artboard {
+  position: absolute;
+  left: 56px;
+  top: 48px;
+  width: 640px;
+  height: 680px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+  padding: 36px 40px;
+}
+.canvas-kicker {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.canvas-title {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.canvas-body {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 34em;
+}
+.canvas-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.canvas-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f7f7f8;
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+.canvas-chip img { width: 22px; height: 22px; border-radius: 6px; }
+.canvas-mark {
+  position: absolute;
+  left: 56px;
+  bottom: 28px;
+  color: rgba(10, 83, 64, 0.55);
+  font-size: 12px;
+  font-weight: 600;
+}
+.inserted-preview {
+  position: absolute;
+  left: 420px;
+  top: 280px;
+  width: 128px;
+  height: 128px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  outline: 2px solid rgba(10, 83, 64, 0.35);
+  outline-offset: 4px;
+  background: #eee;
+}
+.inserted-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.inserted-preview[hidden] { display: none; }
+
+.plugin {
+  position: absolute;
+  right: 36px;
+  top: 28px;
+  width: 400px;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.06);
+}
+.plugin-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+}
+.plugin-chrome img { width: 16px; height: 16px; border-radius: 4px; }
+.plugin-chrome .win {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+.plugin-chrome .win i {
+  width: 10px; height: 10px; border-radius: 50%; background: #d8d8dc; display: block;
+}
+.app { display: flex; flex-direction: column; min-height: 0; flex: 1; }
+.label { display:block; margin:0 0 4px; color:var(--muted); font-size:11px; font-weight:600; }
+.filters { display:flex; flex-direction:column; gap:8px; padding:12px 12px 0; }
+.field { position:relative; min-width:0; }
+.field input, .field select {
+  width:100%; height:28px; border:1px solid var(--line); border-radius:6px;
+  background-color:var(--surface); padding:0 12px;
+}
+.field input { padding-left:28px; padding-right:28px; height:28px; }
+.search-icon { position:absolute; left:8px; bottom:6px; color:var(--muted); width:16px; height:16px; }
+.clear {
+  position:absolute; right:2px; bottom:2px; display:grid; width:24px; height:24px; place-items:center;
+  border:0; border-radius:6px; background:transparent; color:var(--muted);
+}
+.progress { height:2px; margin:10px 12px 0; border-radius:999px; background:transparent; }
+.stage { min-height:0; flex:1; overflow:hidden; padding:10px 12px 12px; }
+.recent { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.recent-label { color:var(--muted); font-size:11px; flex:none; }
+.chips { display:flex; gap:6px; overflow:hidden; }
+.chip-wrap {
+  display:inline-flex; align-items:center; flex:none; border:1px solid var(--line);
+  border-radius:999px; background:var(--surface);
+}
+.chip-wrap .chip { border:0; background:transparent; padding:5px 2px 5px 10px; font-size:12px; white-space:nowrap; }
+.chip-x {
+  display:grid; width:22px; height:22px; margin-right:3px; place-items:center; border:0;
+  border-radius:999px; background:transparent; color:var(--muted);
+}
+.count { margin:0 0 6px; color:var(--muted); font-size:11px; }
+.grid {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px 6px; margin:0; padding:0; list-style:none;
+}
+.result {
+  display:flex; width:100%; flex-direction:column; align-items:center; gap:6px;
+  padding:6px 4px 8px; border:0; border-radius:12px; background:transparent;
+}
+.result-selected { background:var(--selected); }
+.thumb, .dock-thumb { overflow:hidden; border-radius:22%; background:var(--thumb); }
+.thumb { width:100%; aspect-ratio:1; box-shadow:var(--shadow); }
+.result-selected .thumb { outline:2px solid var(--accent); outline-offset:2px; }
+.thumb img, .dock-thumb img { display:block; width:100%; height:100%; object-fit:cover; }
+.result-name {
+  display:-webkit-box; overflow:hidden; width:100%; min-height:2.4em; color:var(--muted);
+  font-size:11px; line-height:1.2; text-align:center; -webkit-box-orient:vertical; -webkit-line-clamp:2;
+}
+.result-selected .result-name { color:var(--ink); font-weight:600; }
+.dock {
+  display:flex; flex-direction:column; gap:8px; padding:12px; border-top:1px solid var(--line); background:var(--surface);
+}
+.dock-head { display:flex; min-width:0; gap:10px; }
+.dock-thumb { width:52px; height:52px; flex:none; }
+.dock-copy { display:flex; min-width:0; flex-direction:column; justify-content:center; gap:1px; }
+.dock-title { margin:0; overflow:hidden; font-size:14px; font-weight:600; text-overflow:ellipsis; white-space:nowrap; }
+.dock-meta { margin:0; overflow:hidden; color:var(--muted); font-size:12px; text-overflow:ellipsis; white-space:nowrap; }
+.primary {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px; width:100%; height:32px;
+  border:0; border-radius:8px; background:var(--accent); color:var(--accent-ink); font-size:13px; font-weight:600;
+}
+.rights, .notice { margin:0; color:var(--muted); font-size:11px; line-height:1.4; }
+.notice[data-tone='ok'] { color:var(--ok); font-weight:600; }
+.notice:empty { display:none; }
+.footer {
+  display:flex; flex:none; justify-content:flex-end; padding:4px 8px 6px; border-top:1px solid var(--line);
+}
+.text-button {
+  border:0; border-radius:8px; background:transparent; color:var(--muted); font-size:12px; padding:4px 6px;
+}
+.icon { width:16px; height:16px; flex:none; }
+  </style>
+</head>
+<body>
+  <div class="frame" id="frame">
+    <div class="menubar">
+      <div class="traffic" aria-hidden="true"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+      <span class="app-name">Sketch</span>
+      <div class="menus"><span>File</span><span>Edit</span><span>Layer</span><span>Plugins</span></div>
+      <div class="doc"><img id="ext-icon-doc" alt="" /><span>App Icons Finder · Untitled</span></div>
+    </div>
+    <div class="workspace">
+      <aside class="toolbar" aria-hidden="true">
+        <div class="tool active">V</div>
+        <div class="tool ghost">R</div>
+        <div class="tool ghost">O</div>
+        <div class="tool ghost">T</div>
+      </aside>
+      <div class="stage-wrap">
+        <div class="artboard">
+          <p class="canvas-kicker">Uwarp · Sketch plugin</p>
+          <h1 class="canvas-title" id="canvas-title">Search App Store icons in Sketch</h1>
+          <p class="canvas-body" id="canvas-body">Open Plugins › App Icons Finder › Search App Icons, pick a result, and insert a PNG.</p>
+          <div class="canvas-row" id="canvas-row"></div>
+        </div>
+        <div class="inserted-preview" id="inserted" hidden><img id="inserted-img" alt="" /></div>
+        <div class="canvas-mark">App Icons Finder · Uwarp</div>
+        <aside class="plugin">
+          <div class="plugin-chrome">
+            <img id="ext-icon-head" alt="" />
+            <span>App Icons</span>
+            <div class="win" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="app" id="panel"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const DATA = window.__SCENE__;
+    if (!DATA) { document.body.textContent = 'Missing scene data'; throw new Error('Missing scene'); }
+    const scene = params.get('scene') || DATA.scene || 'search';
+
+    document.getElementById('ext-icon-doc').src = './icon-128.png';
+    document.getElementById('ext-icon-head').src = './icon-128.png';
+
+    function svgSearch() {
+      return `<svg class="search-icon icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.25" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.2 16.2 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+    }
+    function svgClose() {
+      return `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+    }
+    function svgInsert() {
+      return `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+    }
+
+    const apps = DATA.apps;
+    const selected = apps[DATA.selectedIndex || 0];
+    const query = DATA.query;
+    const showDock = scene !== 'idle';
+    const showSaved = scene === 'saved';
+    const showSelected = scene === 'selected' || scene === 'saved' || scene === 'search';
+
+    document.getElementById('canvas-title').textContent = DATA.canvasTitle || 'Search App Store icons in Sketch';
+    document.getElementById('canvas-body').textContent = DATA.canvasBody || '';
+    document.getElementById('canvas-row').innerHTML = apps.slice(0, 3).map(a =>
+      `<span class="canvas-chip"><img src="${a.artworkUrl}" alt="" /><span>${a.trackName.split(/[:–-]/)[0].trim()}</span></span>`
+    ).join('');
+
+    if (showSaved) {
+      const preview = document.getElementById('inserted');
+      preview.hidden = false;
+      document.getElementById('inserted-img').src = selected.artworkUrl;
+    }
+
+    const recent = (DATA.recent || []).map(term =>
+      `<span class="chip-wrap"><button type="button" class="chip">${term}</button><button type="button" class="chip-x">${svgClose().replace('class="icon"', 'class="icon" style="width:12px;height:12px"')}</button></span>`
+    ).join('');
+
+    const results = apps.slice(0, 9).map((app, i) => {
+      const sel = showSelected && i === (DATA.selectedIndex || 0);
+      return `<li><button type="button" class="result${sel ? ' result-selected' : ''}">
+        <span class="thumb"><img src="${app.artworkUrl}" alt="" width="512" height="512" /></span>
+        <span class="result-name">${app.trackName}</span>
+      </button></li>`;
+    }).join('');
+
+    const dock = showDock ? `
+      <section class="dock">
+        <div class="dock-head">
+          <span class="dock-thumb"><img src="${selected.artworkUrl}" alt="" width="512" height="512" /></span>
+          <div class="dock-copy">
+            <p class="dock-title">${selected.trackName}</p>
+            <p class="dock-meta">${selected.artistName || ''}</p>
+            <p class="dock-meta">${selected.primaryGenreName || ''}</p>
+          </div>
+        </div>
+        <button type="button" class="primary">${svgInsert()}${showSaved ? 'Inserted' : 'Insert PNG'}</button>
+        <p class="rights">Icons belong to their publishers. Get permission before you publish them.</p>
+        <p class="notice" data-tone="${showSaved ? 'ok' : 'idle'}">${showSaved ? 'Inserted' : ''}</p>
+      </section>` : '';
+
+    document.getElementById('panel').innerHTML = `
+      <form class="filters" role="search">
+        <div class="field">
+          <label class="label" for="app-search">Search apps</label>
+          ${svgSearch()}
+          <input id="app-search" value="${query}" readonly />
+          <button type="button" class="clear">${svgClose()}</button>
+        </div>
+        <div class="field">
+          <label class="label" for="app-region">App Store region</label>
+          <select id="app-region"><option>United States</option></select>
+        </div>
+      </form>
+      <div class="progress"></div>
+      <div class="stage">
+        <div class="recent"><span class="recent-label">Recent</span><div class="chips">${recent}</div></div>
+        <p class="count">${apps.length} apps</p>
+        <ul class="grid">${results}</ul>
+      </div>
+      ${dock}
+      <footer class="footer"><button type="button" class="text-button">Privacy</button></footer>
+    `;
+  </script>
+</body>
+</html>

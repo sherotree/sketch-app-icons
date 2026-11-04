@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D6A52"/>
+      <stop offset="1" stop-color="#084536"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFCF5"/>
+      <stop offset="1" stop-color="#F0E9DC"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#F3C65A"/>
+      <stop offset="1" stop-color="#D9A01F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="224" ry="224" fill="url(#bg)"/>
+  <!-- slightly larger tiles for small sizes: margin 160, gap 56, tile 324 -->
+  <rect x="160" y="160" width="324" height="324" rx="86" ry="86" fill="url(#cream)"/>
+  <rect x="540" y="160" width="324" height="324" rx="86" ry="86" fill="url(#cream)"/>
+  <rect x="160" y="540" width="324" height="324" rx="86" ry="86" fill="url(#cream)"/>
+  <rect x="540" y="540" width="324" height="324" rx="86" ry="86" fill="url(#gold)"/>
+</svg>

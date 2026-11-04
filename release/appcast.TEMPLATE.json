@@ -1,0 +1,12 @@
+{
+  "itemName": "App Icons Finder",
+  "versionID": "1.0.0",
+  "downloadURL": "https://example.com/releases/app-icons.sketchplugin.zip",
+  "downloadFileSize": 36026,
+  "creationDate": "Wed, 04 Nov 2026 15:17:32 +0000",
+  "_notes": [
+    "Host the zip, set downloadURL to the public HTTPS URL.",
+    "Put the hosted appcast.json URL into src/manifest.json as \"appcast\".",
+    "Sketch only requires downloadURL + versionID."
+  ]
+}

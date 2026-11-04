@@ -1,0 +1,26 @@
+{
+  "name": "App Icons Finder",
+  "description": "Search the App Store and insert official app icons as PNG.",
+  "author": "Uwarp",
+  "homepage": "https://www.uwarp.design/logo-hunter",
+  "appcast": "https://github.com/sherotree/sketch-app-icons/releases/latest/download/appcast.json",
+  "version": "1.0.0",
+  "identifier": "design.uwarp.sketch.app-icons",
+  "compatibleVersion": "96",
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Search App Icons",
+      "identifier": "search",
+      "script": "plugin.js",
+      "handler": "onRun"
+    }
+  ],
+  "menu": {
+    "title": "App Icons Finder",
+    "items": [
+      "search"
+    ]
+  }
+}

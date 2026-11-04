@@ -1,0 +1,58 @@
+[
+  {
+    "trackId": 1152747299,
+    "trackName": "Figma",
+    "artistName": "Figma Inc.",
+    "primaryGenreName": "Graphics & Design",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/cb/6f/bacb6f5e-cbab-d727-92ea-7d876dd63602/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 897446215,
+    "trackName": "Canva AI Photo & Video Editor",
+    "artistName": "Canva",
+    "primaryGenreName": "Photo & Video",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3f/a0/78/3fa078f4-ab6d-c5b7-ac83-873fc19a4685/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 6448311069,
+    "trackName": "ChatGPT",
+    "artistName": "OpenAI OpCo, LLC",
+    "primaryGenreName": "Productivity",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/2d/27/722d272a-9d6f-d186-8a92-6a884107df8f/AppIcon-0-0-1x_U007epad-0-0-0-1-0-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 1051937863,
+    "trackName": "Adobe Express: Create Anything",
+    "artistName": "Adobe Inc.",
+    "primaryGenreName": "Graphics & Design",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/84/11/fb/8411fbee-f068-1351-3917-708646eb310f/AppIconSpark-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 429047995,
+    "trackName": "Pinterest",
+    "artistName": "Pinterest, Inc.",
+    "primaryGenreName": "Lifestyle",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f0/8e/3d/f08e3d30-65df-7233-d2e5-a9cb133c6af1/AppIcon-0-0-1x_U007epad-0-1-0-0-0-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 1560655497,
+    "trackName": "'Proto' for Figma, Claude and+",
+    "artistName": "Florian Windbacher",
+    "primaryGenreName": "Developer Tools",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/f0/55/aff055d8-08ce-bec2-d275-36fd5743ea95/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 1527554407,
+    "trackName": "Mockup - UI/UX Design",
+    "artistName": "Apprime Studio sarl",
+    "primaryGenreName": "Graphics & Design",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/d5/d0/bbd5d07b-7d98-94fe-7afa-cb208bc6f727/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg"
+  },
+  {
+    "trackId": 956480678,
+    "trackName": "Coolors",
+    "artistName": "Coolors srl",
+    "primaryGenreName": "Graphics & Design",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/63/f9/58/63f95846-6070-582a-e841-7fb9e38c2c39/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg"
+  }
+]
